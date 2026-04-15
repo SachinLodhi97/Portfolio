@@ -19,7 +19,7 @@ export default function Contact() {
             </p>
 
             <div className="social-links">
-              <a href="https://mail.google.com/mail/?view=cm&to=sachinlodhi058@email.com">
+              <a href="mailto:sachinlodhi058@email.com?subject=Hiring%20Opportunity%20-%20Portfolio%20Visit&body=Hi%20Sachin">
                 <i className="fas fa-envelope"></i>
               </a>
 

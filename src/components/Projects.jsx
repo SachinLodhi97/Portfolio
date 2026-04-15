@@ -3,10 +3,25 @@ import { useState } from "react";
 const projects = [
   {
     title: "Movie Recommendation System",
-    desc: "System that learns user taste and suggests movies.",
-    tech: ["Python", "Pandas", "Scikit-learn"],
-    github: "#",
-    live: "https://movie-recommendation-ai-ui.onrender.com/",
+    desc: "AI-Based Movie Recommendation System - Developed a movie recommendation system using machine learning clustering techniques to suggest similar movies based on user preferences. Integrated the TMDB API to fetch trending movies, enable search functionality, and display trailers in real time. Built the backend using FastAPI to efficiently serve model predictions, and developed the frontend with React to create a smooth and interactive user experience.",
+    tech: [
+      "Python",
+      "Pandas",
+      "Scikit-learn",
+      "FastAPI",
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "TMDB API",
+    ],
+    github: {
+      frontend:
+        "https://github.com/SachinLodhi97/AI-Movie-Recommendation-Frontend",
+      backend:
+        "https://github.com/SachinLodhi97/Movie-Recommendation-ai-backend",
+    },
+    live: "https://ai-movie-recommendation-frontend.vercel.app/",
     video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
@@ -33,7 +48,6 @@ export default function Projects() {
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
 
-              {/* TECH TAGS */}
               <div className="tags">
                 {p.tech.map((t, index) => (
                   <span key={index} className="tag">
@@ -44,11 +58,26 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* LINKS WITH ICONS */}
               <div className="project-links">
-                <a href={p.github} target="_blank" rel="noreferrer">
-                  <i className="fa-brands fa-github"></i> Code
-                </a>
+                {typeof p.github === "object" ? (
+                  <>
+                    <a
+                      href={p.github.frontend}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className="fa-brands fa-github"></i> Frontend
+                    </a>
+
+                    <a href={p.github.backend} target="_blank" rel="noreferrer">
+                      <i className="fa-brands fa-github"></i> Backend
+                    </a>
+                  </>
+                ) : (
+                  <a href={p.github} target="_blank" rel="noreferrer">
+                    <i className="fa-brands fa-github"></i> Code
+                  </a>
+                )}
 
                 <a href={p.live} target="_blank" rel="noreferrer">
                   <i className="fa-solid fa-up-right-from-square"></i> Live
@@ -62,7 +91,6 @@ export default function Projects() {
                 </button>
               </div>
 
-              {/* VIDEO */}
               {openVideo === i && (
                 <div className="video-box">
                   <iframe
