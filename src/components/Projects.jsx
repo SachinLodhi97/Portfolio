@@ -22,7 +22,7 @@ const projects = [
         "https://github.com/SachinLodhi97/Movie-Recommendation-ai-backend",
     },
     live: "https://ai-movie-recommendation-frontend.vercel.app/",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    video: "https://youtu.be/8ECq6wupJjo?si=jRpcMIAn5Vcdyn3z",
   },
   {
     title: "Sun Baby AI",
